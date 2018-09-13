@@ -48,6 +48,16 @@ public class Control {
 		return "Successfully Saved!!";
 	}
 	
+	@RequestMapping("/spec")
+	public List<Dept> getSpecific(){
+		return d.findByDeptnoLessThan(50);
+	}
+	
+	@RequestMapping("/nativequery")
+	public List<Dept> getAllNAtiveQuery(){
+		return d.getbyNativeQuery();
+	}
+	
 	
 	
 }
