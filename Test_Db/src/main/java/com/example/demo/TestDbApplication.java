@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories
 @ComponentScan(value = "config")
+@ComponentScan(value="com.security")
 public class TestDbApplication {
 
 	public static void main(String[] args) {
