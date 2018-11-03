@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Dept {
+public class Dept1 {
 
 	@Column @Id
 	private long deptno;

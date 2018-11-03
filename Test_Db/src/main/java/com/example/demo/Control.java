@@ -1,6 +1,7 @@
 package com.example.demo;
 import java.util.List;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class Control {
 	@RequestMapping(value="/" , method=RequestMethod.GET) 
 	//@ApiOperation("Gets the DEPT detail for specific ID")
 	//@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Dept.class)})
-	public List<Dept> getAll(HttpServletRequest r) {
+	public List<Dept1> getAll(HttpServletRequest r) {
 		/*r.setAttribute("data", d.findByDeptno(20));
 		System.out.println(g.getKey());
 		return "home";*/
@@ -42,22 +43,28 @@ public class Control {
 	@RequestMapping(value="/x" , method=RequestMethod.POST) 
 	//@ApiOperation("Gets the DEPT detail for specific ID")
 	//@ApiResponses(value = {@ApiResponse(code = 200, message = "OK", response = Dept.class)})
-	public String getX(@RequestBody Dept dp) {
+	public String getX(@RequestBody Dept1 dp) {
 		
 		d.save(dp);
 		return "Successfully Saved!!";
 	}
 	
 	@RequestMapping("/spec")
-	public List<Dept> getSpecific(){
+	public List<Dept1> getSpecific(){
 		return d.findByDeptnoLessThan(50);
 	}
 	
 	@RequestMapping("/nativequery")
-	public List<Dept> getAllNAtiveQuery(){
+	public List<Dept1> getAllNAtiveQuery(){
 		return d.getbyNativeQuery();
 	}
 	
+	/*@RequestMapping("/xv")
+	public List<Dept1> getSpecificTopRecords(){
+		
+		return d.queryTop2ByDeptno(10);
+	}
+	*/
 	
 	
 }
